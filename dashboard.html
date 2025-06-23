@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym Member Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, <span id="userName">Member</span></h1>
+
+    <button class="accordion">User Information</button>
+    <div class="panel" id="userInfo">
+      <p><strong>Email:</strong> <span id="userEmail"></span></p>
+      <p><strong>Membership:</strong> Gold</p>
+      <p><strong>Status:</strong> Active</p>
+    </div>
+
+    <button class="accordion">Fee Structure</button>
+    <div class="panel" id="feeInfo">
+      <ul>
+        <li>Monthly Fee: ₹1000</li>
+        <li>Personal Trainer: ₹500</li>
+        <li>Total Due: ₹1500</li>
+      </ul>
+    </div>
+
+    <button class="accordion">Notifications</button>
+    <div class="panel" id="notifications">
+      <!-- This will be dynamically filled by gym owner later -->
+      <p>No notifications yet.</p>
+    </div>
+  </div>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

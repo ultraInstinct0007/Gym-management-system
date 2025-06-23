@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gym Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li id="navDashboard" class="active">Dashboard</li>
+          <li id="navNotify">Notify</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <section class="stats" id="dashboardSection">
+        <div class="card" id="totalMembers">Total Members: 0</div>
+        <div class="card" id="activeMembers">Active: 0</div>
+      </section>
+
+      <section class="members" id="membersSection">
+        <h3>Member List</h3>
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Status</th><th>Membership</th></tr>
+          </thead>
+          <tbody id="memberTable"></tbody>
+        </table>
+      </section>
+
+      <section id="notifySection" style="display:none;">
+        <h3>Send Notification</h3>
+        <textarea id="notifyText" rows="3" placeholder="Type your message..."></textarea><br/>
+        <button id="sendNotify">Send to All</button>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
