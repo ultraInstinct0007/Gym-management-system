@@ -88,21 +88,5 @@ onSnapshot(collection(db, "users"), snap => {
   activeMembersDiv.textContent = `Active: ${active}`;
 });
 
-// ▶️ Notify users
-document.getElementById("sendNotify").onclick = async () => {
-  const msg = document.getElementById("notifyText").value.trim();
-  if (!msg) return alert("Type a message first");
 
-  try {
-    const docRef = await addDoc(collection(db, "notifications"), {
-      message: msg,
-      timestamp: new Date()
-    });
-    console.log("✅ Notification sent with ID:", docRef.id);
-    alert("Notification sent!");
-    document.getElementById("notifyText").value = "";
-  } catch (err) {
-    console.error("❌ Error sending notification:", err);
-    alert("Failed to send notification: " + err.message);
-  }
-};
+
