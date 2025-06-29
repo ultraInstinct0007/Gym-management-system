@@ -21,21 +21,27 @@ const toggleText = document.getElementById("toggleText");
 const authForm = document.getElementById("authForm");
 const statusMsg = document.getElementById("statusMsg");
 
+// ----- initial state -----
 let isLogin = true;
 
-toggleLink.addEventListener("click", (e) => {
+// parent element is always present
+toggleText.addEventListener("click", (e) => {
+  // act only when the real link was clicked
+  if (e.target.id !== "toggleLink") return;
   e.preventDefault();
-  isLogin = !isLogin;
 
-  formTitle.textContent = isLogin ? "Member Login" : "Member Registration";
+  isLogin = !isLogin;                               // toggle mode
+  formTitle.textContent = isLogin
+    ? "Member Login"
+    : "Member Registration";
   submitBtn.textContent = isLogin ? "Log In" : "Register";
+
+  // rebuild the helper sentence + link
   toggleText.innerHTML = isLogin
     ? `Don't have an account? <a href="#" id="toggleLink">Register here</a>`
     : `Already have an account? <a href="#" id="toggleLink">Log in here</a>`;
-
-  // Reattach toggle listener to the new link
-  document.getElementById("toggleLink").addEventListener("click", toggleLink.click);
 });
+
 
 authForm.addEventListener("submit", (event) => {
   event.preventDefault();
